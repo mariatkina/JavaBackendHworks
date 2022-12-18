@@ -15,6 +15,7 @@ public abstract class UrlAndApiKeyAbstrTest {
     private static String apiKey;
     private static InputStream configFile;
 
+
     public static String getBaseUrl() {
         return baseUrl;
     }
@@ -24,6 +25,7 @@ public abstract class UrlAndApiKeyAbstrTest {
     }
 
 
+
     @BeforeAll
     static void beforeAllTests() throws IOException {
         configFile = new FileInputStream("src/test/resources/lesson3.properties");
@@ -31,7 +33,10 @@ public abstract class UrlAndApiKeyAbstrTest {
         apiKey = properties.getProperty("apiKey");
         baseUrl = properties.getProperty("baseUrl");
 
+
         RestAssured.enableLoggingOfRequestAndResponseIfValidationFails();
+
+
     }
     @AfterEach
     void afterEachTestLine(){
